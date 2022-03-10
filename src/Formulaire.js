@@ -6,9 +6,7 @@ const Formulaire = ({ activeFriend, onFriendSelect }) => {
     const [prenomFriend, setPrenomFriend] = useState('');
 
     const handleSubmit = (event) => {
-        event.preventDefault();
         if(activeFriend != null) {
-            console.log('je suis update');
             axios.post('http://localhost:8080/api/v1/friendsUpdate/'+activeFriend.id,
                 {
                     id: activeFriend.id,
@@ -20,7 +18,6 @@ const Formulaire = ({ activeFriend, onFriendSelect }) => {
         setPrenomFriend('');
         onFriendSelect(null);
         } else {
-            console.log('je suis create');
             axios.post('http://localhost:8080/api/v1/friendsAdd',
                     {
                         nom: nomFriend,
