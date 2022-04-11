@@ -15,7 +15,7 @@ function App() {
       setFriends(response.data);
   };
     getFriends();
-  }, [friends]);
+  }, []);
 
   const onFriendSelect = (activeFriend) => {
     setSelectedFriend(activeFriend);
